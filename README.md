@@ -15,15 +15,9 @@ Esse projeto foi desenvolvido durante a Nlw Spacetime da Rocketseat. Foi uma sem
 
 &nbsp;
 
+## 🖼📱 Imagens do Projeto (Mobile)
 
 <img src="https://github.com/Diego-Batista/Nlw-Spacetime/assets/68654450/e0c487f6-22ae-4f89-ad49-6940e4a3d74e.png" align="center" />
-
-
-
-
-
-
-## 🖼📱 Imagens do Projeto (Mobile)
 
 &nbsp;
 
