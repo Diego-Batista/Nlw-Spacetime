@@ -11,7 +11,7 @@ export async function uploadRoutes(app: FastifyInstance) {
   app.post('/upload', async (request, reply) => {
     const upload = await request.file({
       limits: {
-        fileSize: 5242880, // 5mb
+        fileSize: 5_242_880, // 5mb
       },
     })
 
@@ -19,21 +19,20 @@ export async function uploadRoutes(app: FastifyInstance) {
       return reply.status(400).send()
     }
 
-    const mimetypeRegex = /^(image|video)\/[a-zA-Z]+/
-    const isValidFileFormat = mimetypeRegex.test(upload.mimetype)
+    const mimeTypeRegex = /^(image|video)\/[a-zA-Z]+/
+    const isValidFileFormat = mimeTypeRegex.test(upload.mimetype)
 
     if (!isValidFileFormat) {
       return reply.status(400).send()
     }
 
     const fileId = randomUUID()
-
     const extension = extname(upload.filename)
 
     const fileName = fileId.concat(extension)
 
     const writeStream = createWriteStream(
-      resolve(__dirname, '../../uploads/', fileName),
+      resolve(__dirname, '..', '..', 'uploads', fileName),
     )
 
     await pump(upload.file, writeStream)
